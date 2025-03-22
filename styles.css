@@ -1,0 +1,153 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f3e5f5, #e0f7fa);  /* Soft purple to blue gradient */
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background: #1976d2;  /* Deep blue */
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Image Styling */
+.comm-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.comm-img:hover {
+    transform: scale(1.05);  /* Zoom effect on hover */
+}
+
+/* Text Box Styling */
+.text-box {
+    background: #ffffff;  
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.text-box:hover {
+    transform: translateY(-8px); /* Elevation effect */
+}
+
+.text-box p {
+    font-size: 20px;
+    color: #444;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Timeline Styling */
+.timeline {
+    background: #f0f4c3;  /* Light yellow background */
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.timeline:hover {
+    transform: translateY(-8px);
+}
+
+.timeline h2 {
+    font-size: 28px;
+    color: #1976d2;
+    margin-bottom: 20px;
+}
+
+.timeline ul {
+    list-style: none;
+}
+
+.timeline li {
+    font-size: 18px;
+    color: #555;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.timeline li:last-child {
+    border-bottom: none;
+}
+
+/* Quote Box */
+.quote-box {
+    background: #e8f5e9;  /* Soft green */
+    border-left: 8px solid #43a047;  
+    padding: 20px 30px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.quote-box blockquote {
+    font-style: italic;
+    font-size: 22px;
+    color: #2e7d32;
+}
+
+.quote-box span {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
+    text-align: right;
+}
+
+/* Footer */
+footer {
+    background: #1976d2;  /* Matching header color */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #ffcc80;  /* Soft orange link */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ff9800;  /* Bright orange on hover */
+}
