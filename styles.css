@@ -1,12 +1,13 @@
 /* Base styles and variables */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #e67e22;
-    --accent-color: #3498db;
-    --text-color: #333;
-    --bg-color: #f5f6fa;
+    --primary-color: #1e0f2e;
+    --secondary-color: #e84a5f;
+    --accent-color: #7a4ebd;
+    --tertiary-color: #2a9d8f;
+    --text-color: #2d2d34;
+    --bg-color: #f8f5ff;
     --box-bg: #ffffff;
-    --handwritten-color: #546de5;
+    --handwritten-color: #7a4ebd;
 }
 
 * {
@@ -159,26 +160,24 @@ main {
     padding: 0 1.5rem;
 }
 
+/* Updated hero layout - no longer split in half */
 .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     align-items: center;
-}
-
-@media (max-width: 768px) {
-    .hero {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Image container with styled caption */
 .image-container {
     position: relative;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(30, 15, 46, 0.2);
     transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .image-container:hover {
@@ -196,65 +195,105 @@ main {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgba(30, 15, 46, 0.8), transparent);
     color: white;
     padding: 1rem;
     font-size: 0.9rem;
     font-style: italic;
 }
 
-/* Content box */
+/* Updated content box - new style */
 .content-box {
     background-color: var(--box-bg);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 25px rgba(30, 15, 46, 0.1);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    margin-top: -3rem;
+    z-index: 1;
+    border-top: 4px solid var(--secondary-color);
 }
 
-.content-box::before {
+.content-box h2 {
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-box h2::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    background-color: var(--secondary-color);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+/* Updated paragraph style - two-column layout */
 .content-box p {
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    column-count: 2;
+    column-gap: 2.5rem;
+    text-align: justify;
+}
+
+.content-box p:last-child {
+    column-span: all; /* Last paragraph spans all columns */
+    margin-bottom: 0;
+    font-style: italic;
+    color: var(--accent-color);
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(122, 78, 189, 0.3);
 }
 
 /* Interactive communication icons - unique element */
 .interactive-element {
     display: flex;
     justify-content: space-around;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    background: linear-gradient(to right, rgba(232, 74, 95, 0.05), rgba(122, 78, 189, 0.05));
+    padding: 1.5rem;
+    border-radius: 8px;
 }
 
 .comm-icon {
-    font-size: 2rem;
+    font-size: 2.2rem;
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .comm-icon::after {
     content: attr(data-era);
     position: absolute;
-    bottom: -20px;
+    bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     opacity: 0;
     transition: opacity 0.3s ease;
+    font-weight: 500;
+    color: var(--primary-color);
 }
 
 .comm-icon:hover {
-    transform: scale(1.2);
+    transform: translateY(-10px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
 }
 
 .comm-icon:hover::after {
@@ -263,10 +302,10 @@ main {
 
 /* Handwritten note section - unique personal touch */
 .handwritten-note {
-    margin: 3rem 0;
-    padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 8px;
+    margin: 4rem auto 2rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
     position: relative;
     font-family: 'Montserrat', cursive;
     color: var(--handwritten-color);
@@ -275,7 +314,9 @@ main {
     text-align: center;
     font-size: 1.2rem;
     transform: rotate(-1deg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(122, 78, 189, 0.15);
+    max-width: 90%;
+    border-bottom: 3px solid var(--tertiary-color);
 }
 
 .pen-mark {
@@ -362,5 +403,9 @@ a:focus, button:focus {
     nav ul {
         justify-content: center;
         flex-wrap: wrap;
+    }
+    
+    .content-box p {
+        column-count: 1;
     }
 }
