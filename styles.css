@@ -1,13 +1,13 @@
 /* Base styles and variables */
 :root {
-    --primary-color: #1e0f2e;
-    --secondary-color: #e84a5f;
-    --accent-color: #7a4ebd;
-    --tertiary-color: #2a9d8f;
-    --text-color: #2d2d34;
-    --bg-color: #f8f5ff;
+    --primary-color: #0f0f0f;
+    --secondary-color: #e02025;
+    --accent-color: #a61b1b;
+    --tertiary-color: #333333;
+    --text-color: #252525;
+    --bg-color: #f2f2f2;
     --box-bg: #ffffff;
-    --handwritten-color: #7a4ebd;
+    --handwritten-color: #9c1818;
 }
 
 * {
@@ -73,7 +73,7 @@ header {
     background-color: var(--primary-color);
     color: white;
     padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .header-content {
@@ -90,7 +90,7 @@ header {
 }
 
 .header-content h1::after {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     width: 80%;
 }
 
@@ -173,11 +173,12 @@ main {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(30, 15, 46, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    border: 1px solid rgba(224, 32, 37, 0.3);
 }
 
 .image-container:hover {
@@ -195,7 +196,7 @@ main {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(30, 15, 46, 0.8), transparent);
+    background: linear-gradient(to top, rgba(15, 15, 15, 0.8), transparent);
     color: white;
     padding: 1rem;
     font-size: 0.9rem;
@@ -207,7 +208,7 @@ main {
     background-color: var(--box-bg);
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(30, 15, 46, 0.1);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -250,7 +251,7 @@ main {
     color: var(--accent-color);
     text-align: center;
     padding-top: 1rem;
-    border-top: 1px dashed rgba(122, 78, 189, 0.3);
+    border-top: 1px dashed rgba(166, 27, 27, 0.3);
 }
 
 /* Interactive communication icons - unique element */
@@ -258,7 +259,7 @@ main {
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
-    background: linear-gradient(to right, rgba(232, 74, 95, 0.05), rgba(122, 78, 189, 0.05));
+    background: linear-gradient(to right, rgba(224, 32, 37, 0.05), rgba(15, 15, 15, 0.05));
     padding: 1.5rem;
     border-radius: 8px;
 }
@@ -276,6 +277,7 @@ main {
     justify-content: center;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(224, 32, 37, 0.2);
 }
 
 .comm-icon::after {
@@ -294,6 +296,7 @@ main {
 .comm-icon:hover {
     transform: translateY(-10px);
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+    border-color: var(--secondary-color);
 }
 
 .comm-icon:hover::after {
@@ -314,9 +317,9 @@ main {
     text-align: center;
     font-size: 1.2rem;
     transform: rotate(-1deg);
-    box-shadow: 0 4px 20px rgba(122, 78, 189, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     max-width: 90%;
-    border-bottom: 3px solid var(--tertiary-color);
+    border-bottom: 3px solid var(--secondary-color);
 }
 
 .pen-mark {
